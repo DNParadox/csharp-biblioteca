@@ -61,6 +61,10 @@ public class Documenti
 public class DVD : Documenti
 {
     public string Durata { get; set; }
+    public DVD(string Titolo) : base(Titolo)
+    {
+        string[] titolo = { "Matrix", "Arma letale","Logan"};
+    }
     public DVD(string codice) : base(codice)
     {
     }
