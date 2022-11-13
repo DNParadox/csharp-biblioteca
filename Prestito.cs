@@ -18,37 +18,23 @@
 //L’utente deve poter eseguire delle ricerche per codice o per titolo e, eventualmente, effettuare dei prestiti registrando il periodo 
 //(Dal/Al) del prestito e il documento.
 //Deve essere possibile effettuare la ricerca dei prestiti dato nome e cognome di un utente.
-Biblioteca Biblioteca = new Biblioteca();
-Biblioteca.GeneraDocumenti();
-Biblioteca.GeneraUtenti();
 
 
-bool loop = true;
-while (loop)
+public class Prestito
 {
-    Console.WriteLine("Scegli un opzione");
-    Console.WriteLine("1) Effettua un prestito");
-    Console.WriteLine("2) Mostra i documenti");
-    Console.WriteLine("3) Cerca Prestiti");
-    Console.WriteLine("4) Esci");
-    int risposta = Convert.ToInt32(Console.ReadLine());
-
-    switch (risposta)
+    public Prestito(string dataInizio, string dataFine, Documenti documentoDaPrestare,Utenti utenteSelezionato)
     {
-        case 1:
-            Biblioteca.ControlloDocumenti();
-            break;
-        case 2:
-            Biblioteca.PrendiTuttiDocumenti();
-            break;
-        case 3:
-            Biblioteca.OttieniPrestito();
-            break;
-        case 4:
-            loop = false;
-            break;
-        default:
-            Console.WriteLine("Non è stata selezionata un opzione valida");
-            break;
+        DataInizio = dataInizio;
+        DataFine = dataFine;
+        DocumentoDaPrestare = documentoDaPrestare;
+        UtenteSelezionato = utenteSelezionato;
+
     }
+
+
+   public string DataInizio { get; set; }
+   public string DataFine { get; set; }
+   public Documenti DocumentoDaPrestare { get; set; }
+   public Utenti UtenteSelezionato { get; set; }
+
 }
